@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+    "name": "ChromeReload",
+  "background": {
+    "scripts":["c.js"]
+  },
+  "content_scripts": [
+    {
+
+      "matches": ["http://192.168.1.249/MeasureManage/*"],
+      "js": ["d.js"]
+    }
+  ],
+  "version": "0.1.1",
+    "icons": { "16": "icons/KnobLoopOn16.png",
+               "32": "icons/KnobLoopOn.png",
+               "48": "icons/KnobLoopOn48.png",
+              "128": "icons/KnobLoopOn128.png"
+    },
+    "description": "Automatically reload a page. Configure how often each page reloads and see a count-down until the next load",
+    "browser_action": {
+        "default_title": "Reloader",       // optional; shown in tooltip
+        "default_popup": "popup.html",               // optional
+        "default_icon": "icons/KnobLoopOff.png"
+    },
+    "permissions": [
+      "http://192.168.1.249/MeasureManage/*",
+        "tabs",
+      "storage"
+    ]
+}
